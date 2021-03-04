@@ -1,9 +1,15 @@
+export const goToOpening = (history) => {
+    history.push('/')
+}
+
 export const goToLogin = (history) => {
     history.push('/entrar')
-  }
-  export const goToSignUp = (history) => {
+}
+
+export const goToSignUp = (history) => {
     history.push('/cadastro')
-  }
-  export const goToHome = (history) => {
-    history.push('/')
-  }
+}
+
+export const goToFeed = (history) => {
+    history.push('/home')
+}
