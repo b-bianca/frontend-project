@@ -1,4 +1,4 @@
-export const goToOpening = (history) => {
+export const goToScreen = (history) => {
     history.push('/')
 }
 
@@ -7,9 +7,9 @@ export const goToLogin = (history) => {
 }
 
 export const goToSignUp = (history) => {
-    history.push('/cadastro')
+    history.push('/cadastrar')
 }
 
-export const goToFeed = (history) => {
+export const goToHome = (history) => {
     history.push('/home')
 }
