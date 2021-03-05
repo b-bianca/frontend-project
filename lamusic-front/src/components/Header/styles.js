@@ -70,7 +70,6 @@ export const LeftContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    cursor: pointer;
 `   
 export const AnimationContainner = styled.div`   
     position: relative;
@@ -93,7 +92,7 @@ export const Span = styled.span`
     bottom: 20%;
     background:violet;  
     animation-delay: 4s;
-    animation: wave 0.5s 10 ease; 
+    animation: wave 0.5s 15 ease; 
     :first-child{  
     left:0px;  
     width:5px;  

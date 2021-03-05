@@ -15,7 +15,7 @@ export default function Header() {
     return (
         <HeaderContainer>
           <Route exact path={["/", "/entrar", "/cadastrar", "/home"]}>
-            <LeftContainer onClick={() => goToHome(history)}>
+            <LeftContainer>
                 <AnimationContainner>
                     <Span></Span>  
                     <Span></Span>  
