@@ -1,15 +1,15 @@
 export const goToScreen = (history) => {
-    history.push('/')
+    history.push("/")
 }
 
 export const goToLogin = (history) => {
-    history.push('/entrar')
+    history.push("/entrar")
 }
 
 export const goToSignUp = (history) => {
-    history.push('/cadastrar')
+    history.push("/cadastrar")
 }
 
 export const goToHome = (history) => {
-    history.push('/home')
+    history.push("/home")
 }

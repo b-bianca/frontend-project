@@ -1,8 +1,7 @@
 import React from "react"
 import { Route, useHistory } from 'react-router-dom';
-import { goToHome, goToLogin, goToSignUp } from "../../routes/coordinator";
+import { goToLogin, goToSignUp } from "../../routes/coordinator";
 import { HeaderContainer, LeftContainer, AnimationContainner, Span, LogoContainner, Logo, ButtonsContainer, ButtonLogin, ButtonSignup, ButtonLogout } from "./styles"
-
 
 export default function Header() {
     const history = useHistory()
@@ -10,7 +9,7 @@ export default function Header() {
     const logout = () => {
         localStorage.removeItem("token");
         goToLogin(history);
-      }
+    }
 
     return (
         <HeaderContainer>

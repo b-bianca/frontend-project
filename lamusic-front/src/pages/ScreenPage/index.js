@@ -14,6 +14,5 @@ export default function ScreenPage() {
                 <Subtitle>compartilhe suas criações</Subtitle>
             </TextContainer>
         </ScreenContainer>
-        
     )
 }

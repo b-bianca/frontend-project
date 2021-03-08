@@ -1,0 +1,1 @@
+export const greenYellow = '#ADFF2F'
