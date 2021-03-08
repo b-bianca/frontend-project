@@ -13,7 +13,7 @@ import HomePage from "../pages/HomePage"
 export default function Router() {
     return(
         <BrowserRouter>
-            <Header exact path={["/", "/cadastrar", "/entrar", "/home"]}/>
+            {/* <Header exact path={["/", "/cadastrar", "/entrar", "/home"]}/> */}
             <Switch>
                 <Route exact path={"/"}>
                     <ScreenPage/>
