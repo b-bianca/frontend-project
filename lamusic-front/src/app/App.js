@@ -1,17 +1,16 @@
 import './App.css'
-import { BrowserRouter, Route } from 'react-router-dom';
 import React from "react"
 import Router from "../routes/Router"
-import Header from '../components/Header'
+import { ThemeProvider } from '@material-ui/core/styles'
+import theme from '../constants/theme'
 
 export default function App() {
     return(
-        <div>
-            <BrowserRouter>
-               <Header/>
-               <Router/>
-            </BrowserRouter>
-        </div>
+        <ThemeProvider theme={theme}>
+         
+             <Router/>
+          
+        </ThemeProvider>
     )
 }
 
