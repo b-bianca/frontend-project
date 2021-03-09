@@ -15,7 +15,6 @@ export const ButtonsContainer = styled.div`
     flex-wrap: wrap;
     align-content: center;
     justify-content: space-between;
-    width: 50%;
 `   
 export const ButtonSignup = styled.button`  
     margin: 0 1em 0 0;

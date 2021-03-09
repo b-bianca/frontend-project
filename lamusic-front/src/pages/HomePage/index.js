@@ -1,4 +1,5 @@
 import React from "react"
+import useProtectedPage from "../../hooks/useProtectedPage"
 import PlaylistCard from "../../components/PlaylistCard"
 import MusicCard from "../../components/MusicCard"
 //import { useHistory } from "react-router"
@@ -6,6 +7,8 @@ import { useRequestData } from "../../hooks/useRequestData"
 import { HomeContainer, Background, PlaylistContainer, MusicsContainer, Title, Playlists, Musics, AddPlaylist } from "./styles"
 
 export default function HomePage() {
+    window.document.title = "Lamusic - Home"
+    useProtectedPage()
     //const history = useHistory()
     
     const [ dataPlaylists ] = useRequestData("https://lamusic.herokuapp.com/playlist", undefined)

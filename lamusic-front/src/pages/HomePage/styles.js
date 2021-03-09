@@ -24,6 +24,7 @@ export const Background = styled.div`
 export const PlaylistContainer = styled.div`
     display: flex;
     flex-direction: column;
+    
     width: 94%auto;
     height: 40vh;
 `
@@ -49,4 +50,6 @@ export const Musics = styled.div`
 export const AddPlaylist = styled.button`   
     border-radius: 50%;
     background-color: greenyellow;
+    font-size: 40px;
+    outline: none;
 `       
