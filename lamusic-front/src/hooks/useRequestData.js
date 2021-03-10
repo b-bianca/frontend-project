@@ -18,5 +18,5 @@ export function useRequestData(url,initialState) {
     })
 }
 , [url])
-        return [data, setData]
+        return data
 }

@@ -12,7 +12,9 @@ export const Div = styled.img`
 `
 export const Title = styled.h3`  
     color: yellow;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    font-style: italic;
     align-content: center;
     align-self: center;
     justify-self: center;
@@ -20,7 +22,8 @@ export const Title = styled.h3`
 `   
 export const Subtitle = styled.h4`  
     color: white;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
     align-content: center;
     align-self: center;
     justify-self: center;

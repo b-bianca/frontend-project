@@ -1,4 +1,4 @@
-import { PlaylistBox, Image, Div, Title, Subtitle } from "./styles"
+import { PlaylistBox, Div, Title, Subtitle } from "./styles"
 
 export default function PlaylistCard(props) {
     

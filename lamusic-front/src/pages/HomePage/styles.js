@@ -10,7 +10,7 @@ export const HomeContainer = styled.div`
     background-image: linear-gradient(230deg, black 15%, transparent 10%, transparent 100%);
     background-size: 10px 10px ;
     background-position:  0px 60px; 
-`      
+`
 export const Background = styled.div`
     display: flex;
     flex-direction: column;
@@ -24,8 +24,7 @@ export const Background = styled.div`
 export const PlaylistContainer = styled.div`
     display: flex;
     flex-direction: column;
-    
-    width: 94%auto;
+    width: 94%;
     height: 40vh;
 `
 export const MusicsContainer = styled.div` 
@@ -48,8 +47,39 @@ export const Musics = styled.div`
     flex-wrap: wrap;
 `
 export const AddPlaylist = styled.button`   
-    border-radius: 50%;
-    background-color: greenyellow;
-    font-size: 40px;
+    background-color: transparent;
+    border: transparent;
+    color: greenyellow;
     outline: none;
-`       
+    margin: 0.1em 0 0 0.5em;
+    padding: 0em 0.2em;
+    //align-self: center;
+    font-weight: 700;
+    font-size: 30px;
+    cursor: pointer;
+    font-family: 'Open Sans Condensed', sans-serif;
+    &:hover {
+    background-color: yellow;
+    color:black;
+    }
+`
+export const ButtonBox = styled.div`   
+    display: flex;
+`
+export const CloseButton = styled.button`
+    background-color: transparent;
+    border: transparent;
+    color: greenyellow;
+    margin: 0.1em 0 0 0.5em;
+    padding: 0em 0.2em;
+    outline: none;
+    align-self: flex-start;
+    font-weight: 700;
+    font-size: 30px;
+    cursor: pointer;
+    font-family: 'Open Sans Condensed', sans-serif;
+    &:hover {
+    background-color: yellow;
+    color:black;
+    }
+`    
