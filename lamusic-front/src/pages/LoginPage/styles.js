@@ -10,7 +10,7 @@ export const LoginContainer = styled.div`
     background-color: black;
     background-image: linear-gradient(350deg, greenyellow 25%, transparent 15%, transparent 100%);
     background-position: 0px 60px; 
-`    
+` 
 export const Background = styled.div`
     background-image: linear-gradient(230deg, black 15%, transparent 10%, transparent 100%);
     background-size: 10px 10px ;
