@@ -1,26 +1,57 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import useProtectedPage from "../../hooks/useProtectedPage"
 import PlaylistCard from "../../components/PlaylistCard"
 import MusicCard from "../../components/MusicCard"
-import { useRequestData } from "../../hooks/useRequestData"
-import { HomeContainer, Background, PlaylistContainer, MusicsContainer, Title, Playlists, Musics, AddPlaylist, ButtonBox, CloseButton } from "./styles"
+import { HomeContainer, Background, PlaylistContainer, MusicsContainer, Title, Playlists, Musics, AddButton, ButtonBox, CloseButton } from "./styles"
 import CreatePlayListForm from "../../components/CreatePlaylist"
 import CreateMusicForm from "../../components/CreateMusic"
 import Modal from "react-modal"
 import { ModalStyle } from "./stylesModal"
+import axios from "axios"
 
 export default function HomePage() {
     window.document.title = "Lamusic - Home"
     useProtectedPage()
+    const [playlist, setPlaylist] = useState([], undefined)
+    const [music, setMusic] = useState([], undefined)
     const [modalIsOpen, setModalIsOpen] = useState({
         isOpen: false,
         modalName: ""
-        
+       
     })
-  
-    const getAllPlaylists = useRequestData("https://lamusic.herokuapp.com/playlist", undefined)
 
-    const getAllMusics = useRequestData("https://lamusic.herokuapp.com/music", undefined)
+    useEffect(() => {
+        getAllPlaylists()
+        getAllMusics()
+    },[])
+  
+    const getAllPlaylists = () => {
+        axios.get("https://lamusic.herokuapp.com/playlist", {
+            headers: {
+                Authorization: localStorage.getItem("token")
+            }
+        })
+        .then((response) => {
+            setPlaylist(response.data.playlist)
+          }).catch(error => {
+            alert("Nenhuma playlist encontrada")
+            console.log(error.message)
+        })
+    }
+
+    const getAllMusics = () => {
+        axios.get("https://lamusic.herokuapp.com/music", {
+            headers: {
+                Authorization: localStorage.getItem("token")
+            }
+        })
+        .then((response) => {
+            setMusic(response.data.result)
+        }).catch(error => {
+            alert("Nenhuma música encontrada")
+            console.log(error.message)
+        })
+    }
 
     const closeModal = () => {
         setModalIsOpen({
@@ -63,17 +94,19 @@ export default function HomePage() {
                 <PlaylistContainer>
                     <ButtonBox>
                         <Title>SUAS PLAYLISTS</Title>
-                        <AddPlaylist onClick={() => handleOpenModal("playlist")}>+</AddPlaylist>
+                        <AddButton onClick={() => handleOpenModal("playlist")}>+</AddButton>
                     </ButtonBox>
                     <Playlists>
-                        {getAllPlaylists && getAllPlaylists.playlist.map(item => {
+                        {playlist && playlist.map(item => {
                             return (
                                 <div>
                                     <PlaylistCard
                                         key={item.id}
+                                        id={item.id}
                                         title={item.title}
                                         subtitle={item.subtitle}
                                         image={item.image}
+                                        getAllPlaylists={getAllPlaylists}
                                     />
                                 </div>
                             )
@@ -83,17 +116,21 @@ export default function HomePage() {
                 <MusicsContainer>
                     <ButtonBox>
                         <Title>SUAS MÚSICAS</Title>
-                        <AddPlaylist onClick={() => handleOpenModal("music")}>+</AddPlaylist>
+                        <AddButton onClick={() => handleOpenModal("music")}>+</AddButton>
                     </ButtonBox>
                     <Musics>
-                        {getAllMusics && getAllMusics.result.map(item => {
+                        {music && music.map(item => {
                             return (
                                 <div>
                                     <MusicCard
                                         key={item.id}
+                                        id={item.id}
                                         title={item.title}
                                         author={item.author}
                                         genres={item.genres}
+                                        file={item.file}
+                                        flexDirection={"column"}
+                                        getAllMusics={getAllMusics}
                                     />
                                 </div>
                             )

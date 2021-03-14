@@ -25,12 +25,11 @@ export default function CreateMusicForm(props) {
             }
         })
             .then(() => {
-                alert("Música criada com sucesso!")
-                resetState()
+                alert("Música cadastrada com sucesso!")
+                props.getAllMusics()
                 props.closeModal()
-                //props.getAllPlaylists()
             }).catch(error => {
-                alert("Por favor, confirme seus dados!")
+                alert("Música não cadastrada")
                 console.log(error.message)
             })
     }

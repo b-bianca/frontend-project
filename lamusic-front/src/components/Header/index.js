@@ -14,7 +14,7 @@ export default function Header() {
 
     return (
         <HeaderContainer>
-          <Route exact path={["/", "/entrar", "/cadastrar", "/home"]}>
+          <Route exact path={["/", "/entrar", "/cadastrar", "/home", "/playlist/:id"]}>
             <LeftContainer>
                 <AnimationContainner>
                     <Span></Span>  
@@ -36,7 +36,7 @@ export default function Header() {
                     <ButtonLogin onClick={() => goToLogin(history)}>ENTRAR</ButtonLogin>
                 </Route> 
 
-                <Route exact path={["/home"]}>   
+                <Route exact path={["/home","/playlist/:id" ]}>   
                     <Filter/>
                     <ButtonLogout onClick={logout}>SAIR</ButtonLogout> 
                 </Route> 

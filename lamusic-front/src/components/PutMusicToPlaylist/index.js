@@ -3,26 +3,26 @@ import React from "react"
 import { useForm } from "../../hooks/useForm"
 import { TextField } from '@material-ui/core'
 import { Title, ButtonSignup, FormContainer, ModalContainer } from "./styles"
-//import { useRequestData } from "../../hooks/useRequestData"
 import axios from "axios"
 
-export default function CreatePlayListForm(props) {
-    const { form, onChange } = useForm({title: "", subtitle: "", image: ""})
+export default function PutMusicToPlaylist() {
+    const {form, onChange, resetState} = useForm({title: "", subtitle: "", image: ""})
     
     const onSubmit = (event) => {
         event.preventDefault()
 
-        axios.put("https://lamusic.herokuapp.com/playlist/create", form, {
+        axios.put("https://lamusic.herokuapp.com/playlist/insert", form, {
             headers: {
                 Authorization: localStorage.getItem("token")
             }
         })
-        .then(() => {
-            alert("Playlist cadastrada com sucesso!")
-            props.getAllPlaylists()
-            props.closeModal()
+        .then(response => {
+            alert("Música cadastrada com sucesso!")
+            resetState()
+            //props.closeModal()
+            //props.getAllPlaylists()
         }).catch(error => {
-            alert("Playlist não cadastrada")
+            alert("Por favor, confirme seus dados!")
             console.log(error.message)
         })
     }

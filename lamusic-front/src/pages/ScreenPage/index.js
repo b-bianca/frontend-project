@@ -1,6 +1,6 @@
 import React from "react"
 import useUnProtectedPage from "../../hooks/useUnProtectedPage"
-import { ScreenContainer, TextContainer, Title, Subtitle } from "./styles"
+import { ScreenContainer, TextContainer, Title, Subtitle, TitleContainer, Detail } from "./styles"
 
 export default function ScreenPage() {
     window.document.title = "Lamusic"
@@ -9,7 +9,10 @@ export default function ScreenPage() {
     return (
         <ScreenContainer> 
             <TextContainer>
-                <Title>Qual a sua vibe?</Title>
+                <TitleContainer>
+                <Title>Qual a sua</Title>
+                <Detail>vibe?</Detail>
+                </TitleContainer>
                 <Subtitle>um universo de músicas e podcasts ao seu alcance</Subtitle>
                 <Subtitle>compartilhe suas criações</Subtitle>
             </TextContainer>

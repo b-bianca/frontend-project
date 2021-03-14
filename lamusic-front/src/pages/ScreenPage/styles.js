@@ -20,17 +20,27 @@ export const TextContainer = styled.div`
     background-size: 10px 10px;
 `  
 export const Title = styled.h1`   
-    color: black;
+    color: white;
     align-self: center;
     font-family: 'Bebas Neue', cursive;
     font-size: 250px;
+    margin-right: 0.2em;
 `
 export const Subtitle = styled.h2`   
     color: black;
     align-self: flex-start;
     margin-left: 2.5em;
-    margin-bottom: 0.25em;
+    padding: 0 0.25em;
     font-family: 'Open Sans Condensed', sans-serif;
     background-color: greenyellow;
 ` 
-
+export const TitleContainer = styled.div`
+    display: flex;
+    justify-content: center;
+` 
+export const Detail = styled.h1`
+    color: black;
+    align-self: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 250px;
+`  
