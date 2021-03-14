@@ -1,8 +1,13 @@
 import styled from "styled-components"
 
 export const MusicBox = styled.div`
+    //display: flex;
+    //flex-direction: ${props => props.flexDirection};
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
 `      
 export const Title = styled.h3`  
     color: yellow;
@@ -17,9 +22,49 @@ export const Author = styled.h4`
     font-weight: 400;
     align-self: center;
 `
-export const Genres = styled.h4`  
+export const Genres = styled.p`  
     color: white;
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 400;
     align-self: center;
 `
+export const Card = styled.div` 
+    background-color: rgba(0,0,0, 0.3);
+    width: 12.5em;
+    height: 12.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 0.75em;
+    margin-right: 0.5em;
+    margin-bottom:1em;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+` 
+export const DeleteButton = styled.button`
+    background-color: transparent;
+    border: transparent;
+    color: greenyellow;
+    margin: 0.1em 0 0 0.5em;
+    padding: 0em 0.2em;
+    outline: none;
+    align-self: flex-start;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: 'Open Sans Condensed', sans-serif;
+    &:hover {
+    background-color: yellow;
+    color:black;
+    }
+`
+export const Audio = styled.audio`  
+    width: 12em;
+    height: 2.5em;
+    align-self: center;
+    margin: 0.5em;
+    outline: none;
+`     
+export const AudioContainer= styled.div`   
+    /* display: flex; */
+`       

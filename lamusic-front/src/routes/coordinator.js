@@ -13,3 +13,7 @@ export const goToSignUp = (history) => {
 export const goToHome = (history) => {
     history.push("/home")
 }
+
+export const goToPlaylistPage = (history, id) => {
+    history.push(`/playlist/${id}`)
+}

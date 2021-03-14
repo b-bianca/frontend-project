@@ -12,11 +12,13 @@ export function useRequestData(url,initialState) {
     })
     .then((response) => {
         setData(response.data)
+        console.log(response)
     })
     .catch((err) => {
         console.log(err)
     })
 }
 , [url])
-        return data
+        //return data
+        return [data, setData]
 }
