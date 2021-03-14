@@ -28,7 +28,7 @@ gorgeous-crib.surge.sh
 
 <a href="https://www.linkedin.com">***Bianca Mendes***</a>
 <br/> 
-<img src="src/assets/img/Linkedin-Logo.png" width="86px">
+
 
 ### Licença
 
