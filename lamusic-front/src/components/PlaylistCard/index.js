@@ -2,6 +2,7 @@ import { useHistory } from "react-router-dom"
 import { goToPlaylistPage } from "../../routes/coordinator"
 import { PlaylistBox, Subtitle, Title, Card, DeleteButton, Image } from "./styles"
 import ReactTooltip from "react-tooltip"
+import capa from "../../assets/img/capa_default.jpg"
 import axios from "axios"
 import React from "react"
 
@@ -16,7 +17,6 @@ export default function PlaylistCard(props) {
         })
             .then(() => {
                 alert("Playlist deletada com sucesso!")
-                props.getAllPlaylists()
             }).catch(error => {
                 alert("Playlist não deletada. Tente novamente")
                 console.log(error.message)
@@ -28,7 +28,7 @@ export default function PlaylistCard(props) {
             <DeleteButton onClick = {DeletePlaylist}>X</DeleteButton>
             <PlaylistBox onClick={() => goToPlaylistPage(history, props.id)}>
                 
-                <Image image={props.image} alt={"foto da playlist"}/>
+                <Image image={props.image || capa } alt={"foto da playlist"}/>
                 <Title>{props.title}</Title>
                 <Subtitle data-tip data-for={props.subtitle}>
                     {props.subtitle.substring(0, 22)}
@@ -36,7 +36,6 @@ export default function PlaylistCard(props) {
                 </Subtitle>
                 <ReactTooltip
                     id={props.subtitle}
-                    //className={'tooltip'}
                     type={'dark'}
                     textColor={'white'}
                     border={true}

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react"
 import useProtectedPage from "../../hooks/useProtectedPage"
 import PlaylistCard from "../../components/PlaylistCard"
 import MusicCard from "../../components/MusicCard"
-import { HomeContainer, Background, PlaylistContainer, MusicsContainer, Title, Playlists, Musics, AddButton, ButtonBox, CloseButton } from "./styles"
+import LinearProgress from '@material-ui/core/LinearProgress'
+import { HomeContainer, Background, PlaylistContainer, MusicsContainer, Title, Playlists, Musics, AddButton, ButtonBox, CloseButton, Text } from "./styles"
 import CreatePlayListForm from "../../components/CreatePlaylist"
 import CreateMusicForm from "../../components/CreateMusic"
 import Modal from "react-modal"
@@ -17,14 +18,17 @@ export default function HomePage() {
     const [modalIsOpen, setModalIsOpen] = useState({
         isOpen: false,
         modalName: ""
-       
     })
 
     useEffect(() => {
         getAllPlaylists()
         getAllMusics()
-    },[])
-  
+    },[music, playlist])
+
+    // useEffect(() => {
+    //     getAllMusics()
+    // },[])
+
     const getAllPlaylists = () => {
         axios.get("https://lamusic.herokuapp.com/playlist", {
             headers: {
@@ -33,7 +37,7 @@ export default function HomePage() {
         })
         .then((response) => {
             setPlaylist(response.data.playlist)
-          }).catch(error => {
+        }).catch(error => {
             alert("Nenhuma playlist encontrada")
             console.log(error.message)
         })
@@ -79,7 +83,7 @@ export default function HomePage() {
 
                     {modalIsOpen.modalName === "playlist" &&
                         (<CreatePlayListForm
-                            getAllPlaylists={getAllPlaylists}
+                            //getAllPlaylists={getAllPlaylists}
                             closeModal={closeModal}
                         />)}
 
@@ -87,8 +91,6 @@ export default function HomePage() {
                         (<CreateMusicForm
                             closeModal={closeModal}
                         />)}
-
-
                 </Modal>)
                 }
                 <PlaylistContainer>
@@ -97,6 +99,9 @@ export default function HomePage() {
                         <AddButton onClick={() => handleOpenModal("playlist")}>+</AddButton>
                     </ButtonBox>
                     <Playlists>
+                        {playlist.length === 0 ? 
+                        <Text>Você ainda não tem playlists cadastradas</Text> 
+                        : <LinearProgress/> }
                         {playlist && playlist.map(item => {
                             return (
                                 <div>
@@ -119,6 +124,9 @@ export default function HomePage() {
                         <AddButton onClick={() => handleOpenModal("music")}>+</AddButton>
                     </ButtonBox>
                     <Musics>
+                        {music.length === 0 ? 
+                        <Text>Você ainda não tem músicas cadastradas</Text> 
+                        : <> </> }
                         {music && music.map(item => {
                             return (
                                 <div>
@@ -131,6 +139,7 @@ export default function HomePage() {
                                         file={item.file}
                                         flexDirection={"column"}
                                         getAllMusics={getAllMusics}
+                                        getAllPlaylists={playlist}
                                     />
                                 </div>
                             )
