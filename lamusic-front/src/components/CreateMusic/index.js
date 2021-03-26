@@ -5,7 +5,7 @@ import { useForm } from "../../hooks/useForm";
 import { ButtonSignup, FormContainer, ModalContainer, Title, GenreContainer, InputContainer, Input } from "./styles";
 
 export default function CreateMusicForm(props) {
-    const { form, onChange, resetState } = useForm({ title: "", author: "", file: "", album: "", genres: [] })
+    const { form, onChange } = useForm({ title: "", author: "", file: "", album: "", genres: [] })
     const [checked, setChecked] = useState([])
     const [genres, setGenres] = useState()
 
@@ -26,7 +26,6 @@ export default function CreateMusicForm(props) {
         })
             .then(() => {
                 alert("Música cadastrada com sucesso!")
-                props.getAllMusics()
                 props.closeModal()
             }).catch(error => {
                 alert("Música não cadastrada")

@@ -24,12 +24,13 @@ export const Subtitle = styled.h4`
 export const Card = styled.div` 
     background-color: rgba(0,0,0, 0.3);
     width: 12.5em;
-    height: 12.5em;
+    height: 14.5em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-left: 0.75em;
     margin-right: 0.5em;
+    margin-bottom:1em;
     border: 1px solid rgba(255, 255, 255, 0.2);
     cursor: pointer;
 `   
@@ -50,7 +51,10 @@ export const DeleteButton = styled.button`
     color:black;
     }
 `
-export const Image = styled.img.attrs(props => ({src: props.image, alt: props.alt}))` 
+export const Image = styled.img.attrs(props => ({src: props.image, alt: props.alt}))`
+    width: 11em;
+    height: 10em;
+    align-self: center;
 `   
 //attrs: atributos 
    

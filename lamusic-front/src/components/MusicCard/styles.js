@@ -31,7 +31,7 @@ export const Genres = styled.p`
 export const Card = styled.div` 
     background-color: rgba(0,0,0, 0.3);
     width: 12.5em;
-    height: 12.5em;
+    height: 14.5em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -68,3 +68,40 @@ export const Audio = styled.audio`
 export const AudioContainer= styled.div`   
     /* display: flex; */
 `       
+export const ButtonContainer = styled.div`  
+    display: flex;
+    justify-content: space-between;
+`
+export const AddButton = styled.button`
+    background-color: transparent;
+    border: transparent;
+    color: greenyellow;
+    margin: 0.1em 0.5em 0 0;
+    padding: 0em 0.1em;
+    outline: none;
+    font-weight: 700;
+    font-size: 22px;
+    cursor: pointer;
+    font-family: 'Open Sans Condensed', sans-serif;
+    &:hover {
+    background-color: yellow;
+    color:black;
+    }
+`     
+export const CloseButtonModal = styled.button`
+    background-color: transparent;
+    border: transparent;
+    color: greenyellow;
+    margin: 0.1em 0 0 0.5em;
+    padding: 0em 0.2em;
+    outline: none;
+    align-self: flex-start;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: 'Open Sans Condensed', sans-serif;
+    &:hover {
+    background-color: yellow;
+    color:black;
+    }
+`    

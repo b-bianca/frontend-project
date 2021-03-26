@@ -26,17 +26,13 @@ export const Background = styled.div`
 export const PlaylistContainer = styled.div`
     display: flex;
     flex-direction: column;
-    width: 94%;
-    height: 40vh;
-    overflow-y: horizontal;
+    width: 94%auto;
 `
 export const MusicsContainer = styled.div` 
     margin-top: 1.5em;
     display: flex;
     flex-direction: column;
     width: 94%auto;
-    //margin-bottom:1em;
-    //height: 60vh;
 `
 export const Title = styled.h2`  
     color: greenyellow;
@@ -45,7 +41,18 @@ export const Title = styled.h2`
 `
 export const Playlists = styled.div`   
     display: flex;
-    flex-wrap: wrap;
+    overflow-x: scroll;
+    margin-bottom:1em;
+    ::-webkit-scrollbar {
+        width: 2px;
+        height: 0.5em;
+    }
+    ::-webkit-scrollbar-thumb {
+        //padding-top:1em;
+        border-radius: 10px;
+        background: greenyellow; 
+        box-shadow: inset 0 0 1px rgba(0,0,0,0.3); 
+    }
 `
 export const Musics = styled.div`   
     display: flex;
@@ -57,10 +64,9 @@ export const Musics = styled.div`
     }
     ::-webkit-scrollbar-thumb {
         //padding-top:1em;
-        -webkit-border-radius: 10px;
         border-radius: 10px;
         background: greenyellow; 
-        -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3); 
+        box-shadow: inset 0 0 1px rgba(0,0,0,0.3); 
     }
 `
 export const AddButton = styled.button`   
@@ -100,3 +106,11 @@ export const CloseButton = styled.button`
     color:black;
     }
 `    
+export const Text = styled.p`
+    color: greenyellow;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+    margin: 3em 0 0 1em;
+    font-style: italic;
+    align-self: center;
+    ` 
