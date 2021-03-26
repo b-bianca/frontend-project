@@ -8,8 +8,7 @@ músicas, também pode criar e deletar playlists.
 ---
 
 ## 🚀️ Link surge
-gorgeous-crib.surge.sh
-
+different-day.surge.sh
 ---
 
 ### 🚀️ Tecnologias utilizadas
